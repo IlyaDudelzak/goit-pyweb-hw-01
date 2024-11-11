@@ -45,7 +45,7 @@ def change_handler(caller:Assistant, name:str, phone1:str, phone2:str):
     rec.edit_phone(phone1, phone2)
     return "Phone changed."
 
-@assistant.command_handler("phone", str)
+@assistant.command_handler(("show", "phone"), str)
 def get_phone(caller:Assistant, name:str):
     chackTypesExc((str,), (name,))
     book = caller.book

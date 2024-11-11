@@ -170,6 +170,8 @@ class Assistant:
         while self.mainLoopActive:
             try:
                 res = self.handle_input(input(">>> "))
+                if(type(res != list)):
+                    res = [res]
                 if(len(res) > 0):
                     print(*res, sep="\n")
             except Exception as e:
